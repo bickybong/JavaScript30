@@ -39,10 +39,21 @@
     background: coral;
   }
 </style>
-
 <button></button>
+<button>click me</button>
 <script>
+ const divs = document.querySelectorAll("div");
 
+ function logText(e) {
+   console.log(this.classList.value);
+   // e.stopPropagation(); 
+ }
+
+ divs.forEach(div => div.addEventListener("click", logText, {
+   once: true
+ }));
+
+ button.addEventListener("click", console.log("clickss"))
 </script>
 </body>
 </html>
